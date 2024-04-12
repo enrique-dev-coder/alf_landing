@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 const Navbar = () => {
   return (
     <nav className=" w-full bg-white">
@@ -11,9 +11,11 @@ const Navbar = () => {
           <button className=" border-2 border-mainDark px-4 py-2  rounded-full ">
             Contact us
           </button>
-          <button className=" bg-mainDark text-white px-4 py-2  rounded-full">
-            Login
-          </button>
+          {/* <Link href={"/login"}>
+            <button className=" bg-mainDark text-white px-4 py-2  rounded-full">
+              Login
+            </button>
+          </Link> */}
         </div>
       </div>
     </nav>

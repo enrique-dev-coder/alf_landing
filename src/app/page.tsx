@@ -1,6 +1,7 @@
 import ContainerHome from "@/wrappers/ContainerHome";
 import Image from "next/image";
 import DemoImage from "../../public/image/demo.jpeg";
+import Link from "next/link";
 export default function Home() {
   return (
     <div className=" w-full">
@@ -20,9 +21,11 @@ export default function Home() {
             <button className=" border-2 border-mainDark px-4 py-2  rounded-full ">
               Schedule a demo
             </button>
-            <button className=" bg-mainDark text-white px-4 py-2  rounded-full">
-              Buy now!
-            </button>
+            <Link href={"/pricing"}>
+              <button className=" bg-mainDark text-white px-4 py-2  rounded-full">
+                Buy now!
+              </button>
+            </Link>
           </div>
         </div>
         <Image
