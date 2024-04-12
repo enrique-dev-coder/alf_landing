@@ -9,6 +9,9 @@ import axios from "axios";
 import PaymenStripeElement from "@/components/PaymentStrypeElement";
 import StripeLogo from "../../../public/image/stripe_logo.svg";
 
+// TODO: ver que pedo con eso que NEXT_PUBLIC exposes this value to the browser
+// TODO: porque se expone la autorization en la pestaña de red, igual le pregunto a mati a ver que dice
+
 const page = ({ searchParams }) => {
   const [customerFormData, setCustomerFormData] = useState({
     name: "",
