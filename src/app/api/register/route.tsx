@@ -39,6 +39,7 @@ export async function POST(request: NextRequest) {
     });
     return NextResponse.json(createdUserInOurDb, { status: 200 });
   } catch (error) {
+    console.log(error);
     if (error.code === "P2002") {
       return NextResponse.json("Este email o nombre ya estan registrados", {
         status: 500,
