@@ -9,9 +9,12 @@ const page = () => {
       <Link href={"/"}>
         <Image src={Logo} alt="Mail sage" width={200} />
       </Link>
-      <p className="text-lg  font-medium">
-        Crea una cuenta para poder compra uno de nuestros servicios
-      </p>
+      <div className="w-full">
+        <p className="text-md font-medium text-center w-[350px] mx-auto ">
+          Es necesario crear una cuenta para tener acceso a la compra de
+          nuestros servicios
+        </p>
+      </div>
       <div>
         <RegisterForm />
       </div>

@@ -42,7 +42,7 @@ const RegisterForm = () => {
           expires: expirationDate,
         }
       );
-      push("/");
+      push("/pricing");
     },
   });
   const handleSubmit = (e) => {

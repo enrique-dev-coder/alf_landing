@@ -12,9 +12,9 @@ const Navbar = async () => {
     return (
       <nav className=" w-full bg-white">
         <div className="max-w-[1280px] w-[80%]  mx-auto  py-4 flex  justify-between items-center">
-          <div>
+          <Link href={"/"}>
             <Image alt="logo" src={logo} className="w-[200px]" />
-          </div>
+          </Link>
           <div className="flex justify-center gap-8">
             <div>
               <button className=" border-2 border-mainDark px-4 py-2  rounded-full ">
@@ -33,6 +33,7 @@ const Navbar = async () => {
   }
   const parsedCookie = JSON.parse(cookieStore.value);
   const { userid } = parsedCookie;
+
   const getUserData = await prisma.user.findUnique({
     where: {
       id: userid,
@@ -41,12 +42,13 @@ const Navbar = async () => {
       name: true,
     },
   });
+
   return (
     <nav className=" w-full bg-white">
       <div className="max-w-[1280px] w-[80%]  mx-auto  py-4 flex  justify-between items-center">
-        <div>
+        <Link href={"/"}>
           <Image alt="logo" src={logo} className="w-[200px]" />
-        </div>
+        </Link>
         <div className="flex justify-center gap-8">
           <div>
             <button className=" border-2 border-mainDark px-4 py-2  rounded-full ">

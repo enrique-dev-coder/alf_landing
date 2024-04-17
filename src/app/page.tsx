@@ -18,12 +18,9 @@ export default function Home() {
             deliverability and free automated setup.
           </p>
           <div className="flex justify-center gap-8">
-            <button className=" border-2 border-mainDark px-4 py-2  rounded-full ">
-              Schedule a demo
-            </button>
             <Link href={"/pricing"}>
-              <button className=" bg-mainDark text-white px-4 py-2  rounded-full">
-                Buy now!
+              <button className=" bg-mainDark text-white text-2xl px-8  shadow-lg py-2  rounded-full">
+                Comprar
               </button>
             </Link>
           </div>
