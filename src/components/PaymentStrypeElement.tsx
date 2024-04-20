@@ -14,26 +14,32 @@ const PaymenStripeElement = ({
   customerStripeId,
   amount,
   description,
+  stripePriceId,
 }: {
   customerStripeId: string;
+  stripePriceId: string;
   amount: string;
   description: string;
 }) => {
-  const [stripeClientSecret, setStripeClientSecret] = useState("");
-
+  const [subscriptionObj, setSubscriptionObj] = useState({});
+  // NOTA : SE ELIMINA LA PARTE DE PAYMENT INTENT PORQUE YA NO TIENE CASO
+  // PARA UN MODELO DE SUSCRIPCION SOLO SE NECESITA EL CLIENT SECRET
+  // PARA PASARLO A LOS ELEMENTOS DE STRIPE
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const createPayment = await fetch("/api/payment/create", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ customerStripeId, amount, description }),
-        });
-        const clientSecret = await createPayment.json();
-        setStripeClientSecret(clientSecret);
-
+        const createInactiveSuscription = await fetch(
+          "/api/payment/subscription",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ customerStripeId, stripePriceId }),
+          }
+        );
+        const subscriptionInfo = await createInactiveSuscription.json();
+        setSubscriptionObj(subscriptionInfo);
         // Aquí puedes hacer algo con los datos recibidos si es necesario
       } catch (error) {
         console.error("Error al realizar la solicitud:", error);
@@ -45,9 +51,9 @@ const PaymenStripeElement = ({
   }, []);
 
   // loader hasta que carge el seceret
-  if (stripeClientSecret) {
+  if (subscriptionObj) {
     const options = {
-      clientSecret: stripeClientSecret,
+      clientSecret: subscriptionObj?.clientSecret,
       // Fully customizable with appearance API.
       appearance: {
         /*...*/

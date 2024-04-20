@@ -32,6 +32,7 @@ const page = async ({ searchParams }) => {
       amount: 13500,
       amount_shown: 135,
       description: "30 mil mails",
+      stripePriceId: "price_1P786MKFPZUKkl8SrdWFMa9j",
     },
     producto2: {
       amount: 19500,
@@ -73,6 +74,7 @@ const page = async ({ searchParams }) => {
           customerStripeId={stripeId}
           amount={metadata[producto].amount}
           description={metadata[producto].description}
+          stripePriceId={metadata[producto].stripePriceId}
         />
       ) : null}
     </div>

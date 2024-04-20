@@ -5,6 +5,7 @@ import {
   useStripe,
   useElements,
   PaymentElement,
+  CardElement,
 } from "@stripe/react-stripe-js";
 
 const CheckoutForm = () => {
@@ -28,7 +29,7 @@ const CheckoutForm = () => {
       //`Elements` instance that was used to create the Payment Element
       elements,
       confirmParams: {
-        return_url: "https://example.com/order/123/complete",
+        return_url: "http://localhost:3000/confirm",
       },
     });
 
