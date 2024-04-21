@@ -28,21 +28,23 @@ const page = async ({ searchParams }) => {
 
   const { producto } = searchParams;
   const metadata = {
-    producto1: {
+    basic: {
       amount: 13500,
       amount_shown: 135,
       description: "30 mil mails",
       stripePriceId: "price_1P786MKFPZUKkl8SrdWFMa9j",
     },
-    producto2: {
+    plus: {
       amount: 19500,
       amount_shown: 195,
       description: "60 mil mails",
+      stripePriceId: "price_1P84wxKFPZUKkl8SnbBrwznA",
     },
-    producto3: {
+    premium: {
       amount: 30000,
       amount_shown: 300,
       description: "120 mil mails",
+      stripePriceId: "price_1P84xYKFPZUKkl8SUNyyEu6I",
     },
   };
   // generar payment intent agregando amount y customer id

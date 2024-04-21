@@ -51,7 +51,7 @@ const PaymenStripeElement = ({
   }, []);
 
   // loader hasta que carge el seceret
-  if (subscriptionObj) {
+  if (subscriptionObj?.clientSecret) {
     const options = {
       clientSecret: subscriptionObj?.clientSecret,
       // Fully customizable with appearance API.

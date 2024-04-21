@@ -22,7 +22,7 @@ const page = () => {
           </div>
           {/*button*/}
           <div className="flex justify-center">
-            <Link href={"/checkout?producto=producto1"}>
+            <Link href={"/checkout?producto=basic"}>
               <button className=" bg-mainDark text-white font-medium text-lg px-4 py-2  rounded-full">
                 Comprar
               </button>
@@ -43,7 +43,7 @@ const page = () => {
           </div>
           {/*button*/}
           <div className="flex justify-center">
-            <Link href={"/checkout?producto=producto2"}>
+            <Link href={"/checkout?producto=plus"}>
               <button className=" bg-mainDark text-white font-medium text-lg px-4 py-2  rounded-full">
                 Comprar
               </button>
@@ -64,7 +64,7 @@ const page = () => {
           </div>
           {/*button*/}
           <div className="flex justify-center">
-            <Link href={"/checkout?producto=producto3"}>
+            <Link href={"/checkout?producto=premium"}>
               <button className=" bg-mainDark text-white font-medium text-lg px-4 py-2  rounded-full">
                 Comprar
               </button>
