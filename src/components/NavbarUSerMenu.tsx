@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   DropdownMenu,
@@ -7,11 +8,17 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/DropdowMenu";
+import { useRouter } from "next/navigation";
+
+import { useCookies } from "react-cookie";
 import Link from "next/link";
 
 import { UserCircleIcon } from "lucide-react";
 
 const NavbarUSerMenu = ({ userName }: { userName: string | undefined }) => {
+  const { push, refresh } = useRouter();
+  const [cookies, setCookie, removeCookie] = useCookies();
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
@@ -28,7 +35,16 @@ const NavbarUSerMenu = ({ userName }: { userName: string | undefined }) => {
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <button className=" font-medium text-red-500">Cerrar Sesión</button>
+          <button
+            onClick={() => {
+              removeCookie("mailsage");
+              push("/");
+              refresh();
+            }}
+            className=" font-medium text-red-500"
+          >
+            Cerrar Sesión
+          </button>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
