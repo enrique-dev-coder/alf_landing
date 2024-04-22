@@ -29,7 +29,7 @@ const AccountInformation = ({ userId }: { userId: string }) => {
 
     fetchData();
     // Si necesitas hacer alguna limpieza al desmontar el componente, puedes retornar una función aquí
-  }, []);
+  }, [userId]);
 
   const productsDescriptions = {
     price_1P786MKFPZUKkl8SrdWFMa9j: {
@@ -52,8 +52,8 @@ const AccountInformation = ({ userId }: { userId: string }) => {
         <div>
           {userSuscriptionsData
             .filter((item) => item.status === "active")
-            .map((item) => (
-              <div className="flex w-full border-2 text-lg p-2 mt-2">
+            .map((item, i) => (
+              <div key={i} className="flex w-full border-2 text-lg p-2 mt-2">
                 <div className="w-4/12 ">
                   <p className="font-medium">Producto</p>
                   <p>{productsDescriptions[item.plan.id].desc}</p>
@@ -72,7 +72,6 @@ const AccountInformation = ({ userId }: { userId: string }) => {
               </div>
             ))}
         </div>
-        <div className="my-4 w-full h-[1px] bg-sky-600" />
       </>
     );
   } else {
