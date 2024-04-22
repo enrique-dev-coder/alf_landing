@@ -5,6 +5,7 @@ import logo from "../../public/image/mailSage_logo.svg";
 import { UserCircleIcon } from "lucide-react";
 import prisma from "../../prisma";
 import { cookies } from "next/headers";
+import NavbarUSerMenu from "./NavbarUSerMenu";
 
 const Navbar = async () => {
   const cookieStore = cookies().get("mailsage");
@@ -17,12 +18,12 @@ const Navbar = async () => {
           </Link>
           <div className="flex justify-center gap-8">
             <div>
-              <button className=" border-2 border-mainDark px-4 py-2  rounded-full ">
+              <button className=" border-2 border-mainDark px-4 py-2  rounded-md ">
                 Contact us
               </button>
             </div>
             <Link href={"/login"}>
-              <button className=" bg-mainDark text-white px-4 py-2  rounded-full">
+              <button className=" bg-mainDark text-white px-4 py-2  rounded-md">
                 Login
               </button>
             </Link>
@@ -51,14 +52,11 @@ const Navbar = async () => {
         </Link>
         <div className="flex justify-center gap-8">
           <div>
-            <button className=" border-2 border-mainDark px-4 py-2  rounded-full ">
+            <button className=" border-2 border-mainDark px-4 py-2  rounded-md ">
               Contact us
             </button>
           </div>
-          <div className="flex items-center gap-2 text-xl text-white bg-mainDark  border-2 px-2 py-1 rounded-full border-mainDark cursor-pointer">
-            <UserCircleIcon />
-            <p>{getUserData?.name}</p>
-          </div>
+          <NavbarUSerMenu userName={getUserData?.name} />
         </div>
       </div>
     </nav>

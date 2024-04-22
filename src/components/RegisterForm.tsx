@@ -5,7 +5,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useMutation } from "@tanstack/react-query";
 import { useCookies } from "react-cookie";
-import { expirationDate } from "@/utils/time";
+import { expirationDate } from "@/lib/utils/time";
 import { Loader2Icon, AlertCircleIcon } from "lucide-react";
 
 interface formData {
