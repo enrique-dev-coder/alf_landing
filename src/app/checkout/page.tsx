@@ -32,19 +32,19 @@ const page = async ({ searchParams }) => {
       amount: 13500,
       amount_shown: 135,
       description: "30 mil mails",
-      stripePriceId: "price_1P786MKFPZUKkl8SrdWFMa9j",
+      stripePriceId: "price_1P8l3RKFPZUKkl8SoIA1h0uQ",
     },
     plus: {
       amount: 19500,
       amount_shown: 195,
       description: "60 mil mails",
-      stripePriceId: "price_1P84wxKFPZUKkl8SnbBrwznA",
+      stripePriceId: "price_1P8l3GKFPZUKkl8S6hEBaHtp",
     },
     premium: {
       amount: 30000,
       amount_shown: 300,
       description: "120 mil mails",
-      stripePriceId: "price_1P84xYKFPZUKkl8SUNyyEu6I",
+      stripePriceId: "price_1P8l2FKFPZUKkl8S1Vusc2Ih",
     },
   };
   // generar payment intent agregando amount y customer id

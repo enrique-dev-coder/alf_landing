@@ -32,15 +32,15 @@ const AccountInformation = ({ userId }: { userId: string }) => {
   }, [userId]);
 
   const productsDescriptions = {
-    price_1P786MKFPZUKkl8SrdWFMa9j: {
+    price_1P8l3RKFPZUKkl8SoIA1h0uQ: {
       billed: "mensual",
       desc: "30,000 mails",
     },
-    price_1P84wxKFPZUKkl8SnbBrwznA: {
+    price_1P8l3GKFPZUKkl8S6hEBaHtp: {
       billed: "mensual",
       desc: "60,000 mails",
     },
-    price_1P84xYKFPZUKkl8SUNyyEu6I: {
+    price_1P8l2FKFPZUKkl8S1Vusc2Ih: {
       billed: "mensual",
       desc: "120,000 mails",
     },
